@@ -1,0 +1,46 @@
+﻿@*     using NDiary.ViewModels
+@model IEnumerable<Student>
+@    using NDiary.Models
+<h1>Группа</h1>
+<div class="conteiner">
+	<ul>
+		<li><a href="#">Дневник</a></li>
+		<li>
+			<a asp-controller="StudentPages" asp-action="ProfilePage" asp-route-name="@ViewBag.name"
+			   asp-route-val="@ViewBag.val">Профиль</a>
+		</li>
+		<li><a asp-controller="StudentPages" asp-action="GroupPage" asp-route-val="@ViewBag.val">Моя группа</a></li>
+		<li><a href="#">Портфолио</a></li>
+		<li><a href="#">Приказы</a></li>
+	</ul>
+</div>
+<table>
+	<tr>
+		<th>Имя</th>
+		<th>Фамилия</th>
+		<th>Телефон</th>
+		<th>Email</th>
+
+
+	</tr>
+	
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Surname)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Phone)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Email)
+			</td>
+		</tr>
+	}
+</table>
+
+ *@

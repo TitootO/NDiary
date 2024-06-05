@@ -1,0 +1,27 @@
+﻿@* @model IEnumerable<NDiary.Models.Student> *@
+
+@* @using NDiary.Models *@
+@model Student
+<div class="conteiner">
+	<ul>
+		<li><a href="#">Дневник</a></li>
+		<li>
+			<a asp-controller="StudentPages" asp-action="ProfilePage" asp-route-name="@ViewBag.name"
+			   asp-route-val="@ViewBag.val">Профиль</a>
+		</li>
+		<li><a asp-controller="StudentPages" asp-action="GroupPage" asp-route-val="@ViewBag.val">Моя группа</a></li>
+		<li><a href="#">Портфолио</a></li>
+		<li><a href="#">Приказы</a></li>
+	</ul>
+</div>
+<h1>Мое порфолио</h1>
+<p>
+	@Model.Name @Model.Surname <br />
+	@* @Model.Group.Name <br /> *@
+	@Model.Phone <br />
+	@Model.Email
+</p>
+
+
+
+

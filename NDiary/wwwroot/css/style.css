@@ -1,0 +1,28 @@
+﻿.conteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: wheat;
+    padding: 20px 10px;
+}
+
+    .conteiner a {
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 5px;
+        color: olive;
+    }
+
+        .conteiner a:hover {
+            background-color: orange;
+            color: olive;
+        }
+
+ul {
+    display: flex;
+}
+
+    ul li {
+        list-style-type: none;
+    }

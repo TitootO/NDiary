@@ -1,0 +1,13 @@
+﻿@using NDiary.Models
+<html>
+<head>
+    <title>Дневник</title>
+	<link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    @await Html.PartialAsync("Header")
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

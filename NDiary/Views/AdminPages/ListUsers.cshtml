@@ -1,0 +1,68 @@
+﻿
+
+@model IEnumerable<User>
+
+<h1>Список ползьзователей</h1>
+
+<div>
+	<label>Логин</label>
+	<input/>
+	<label>Роль</label>
+	<select></select>
+	<input type="submit" value="Фильтровать" />
+</div>
+<table>
+	<tr>
+		<th>Имя</th>
+		<th>Фамилия</th>
+		<th>Телефон</th>
+		<th>Email</th>
+		<th>Логин</th>
+		<th>Пароль</th>
+		<th>Роль</th>
+
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				
+			</td>
+			<td>
+				
+			</td>
+			<td>
+			</td>
+			<td>
+				
+			</td>
+			<td>
+				
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.Login)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Password)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Role.Name)
+			</td>
+			<td>
+				@* @Html.DisplayFor(modelItem => item.) *@
+			</td>
+			<td>
+				<button>
+					Удалить
+				</button>
+			</td>
+			<td>
+				<button>
+					Редактировать
+				</button>
+			</td>
+		</tr>
+	}
+</table>
+

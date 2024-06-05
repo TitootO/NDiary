@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Group>
+<h1>Список групп</h1>
+
+
+<table>
+	<tr>
+		<th>Группа</th>
+		<th>Факультет</th>
+
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Faculty.Name)
+			</td>
+			@* <td>
+				@Html.DisplayFor(modelItem => item.)
+			</td> *@
+			<td>
+				<a asp-controller="StudentPages" asp-action="GroupPage" asp-route-val="@item.Name">Ученики</a>
+
+			</td>
+			<td>
+				<a asp-controller="StudentPages" asp-action="SchedulePage" asp-route-ras="@item.Name">Расписание</a>
+
+			</td>
+		</tr>
+	}
+</table>
