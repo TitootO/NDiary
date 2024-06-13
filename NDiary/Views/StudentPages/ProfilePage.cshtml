@@ -2,7 +2,7 @@
 
 @* @using NDiary.Models *@
 @model Student
-<div class="conteiner">
+@* <div class="conteiner">
 	<ul>
 		<li><a href="#">Дневник</a></li>
 		<li>
@@ -13,13 +13,14 @@
 		<li><a href="#">Портфолио</a></li>
 		<li><a href="#">Приказы</a></li>
 	</ul>
-</div>
+</div> *@
 <h1>Мое порфолио</h1>
 <p>
 	@Model.Name @Model.Surname <br />
-	@* @Model.Group.Name <br /> *@
+	@Model.Group.Name <br />
+	@Model.Group.Faculty.Name <br />
 	@Model.Phone <br />
-	@Model.Email
+	@Model.Email<br />
 </p>
 
 

@@ -2,11 +2,17 @@
 
 namespace NDiary.Model
 {
+    /// <summary>
+    /// Курс 
+    /// </summary>
     public class Subject
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        /// <summary>
+        /// Связанная группа 
+        /// </summary>
         public Group Group { get; set; }
-        public Dictionary<DateOnly, Day> Day { get; set; } = new Dictionary<DateOnly, Day>();
+        public List<Day> Day { get; set; } = new List<Day>();
 	}
 }

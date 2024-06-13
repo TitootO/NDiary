@@ -17,18 +17,18 @@ namespace NDiary.Controllers
 			_database.Students.Load();
 			
 		}
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "admin")]
         public IActionResult Index()
         {
 			//string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
 			return View();
 		}
-		[Authorize(Roles = "Admin")]
+		[Authorize(Roles = "admin")]
 		public IActionResult Admin()
 		{
 			return View();
 		}
-		[Authorize(Roles = "Student")]
+		[Authorize(Roles = "student")]
         public IActionResult Student()
         {
 			string login = User.Identity.Name;
@@ -38,12 +38,12 @@ namespace NDiary.Controllers
 			//List<Student> students = _database.Students.Where(q => q.Group == user.Student.Group).ToList();
 			return View();
 		}
-		[Authorize(Roles = "Parent")]
+		[Authorize(Roles = "parent")]
 		public IActionResult Parent()
 		{
 			return View();
 		}
-		[Authorize(Roles = "Teacher")]
+		[Authorize(Roles = "teacher")]
 		public IActionResult Teacher()
 		{
 			return View();

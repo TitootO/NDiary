@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NDiary.Data;
+using NDiary.Model;
 
 namespace NDiary.Controllers
 {
@@ -11,30 +12,31 @@ namespace NDiary.Controllers
 		{
 			_database = database;
 		}
-		public IActionResult Portfolio(string name)
+		
+		public IActionResult ProfilePage()
 		{
-			//var student = _database.Students.Where(g => g.Name == name).First();
-			//return View(student);
-			return View();
+			int id = Convert.ToInt32(User.Claims.FirstOrDefault(q => q.Type == "UserId").Value);
+			var student = _database.Students.Where(g => g.UserId == id).First();
+			var group = _database.Groups.Where(g => g.Id == student.GroupId).First();
+			var faculty = _database.Faculties.Where(g => g.Id == group.FacultyId).First();
+			group.Faculty = faculty;
+			student.Group = group;
+			return View(student);
 		}
-		//public IActionResult ProfilePage(string name, string val)
-		//{
-		//	var student = _database.Students.Where(g => g.Name == name).First();
-		//	var group = _database.Groups.Where(g => g.Name ==  val).First();
-		//	return View(student);
-		//}
-		//public IActionResult GroupPage(string val)
-		//{
-
-		//	int id = _database.Groups.FirstOrDefault(q => q.Name == val).Id;
-		//	List<Student> students = _database.Students.Where(q => q.GroupId == id).ToList();
-
-		//	return View(students);
-		//}
-		public IActionResult SchedulePage(string ras)
+		public IActionResult GroupPage()
 		{
-			//var group = _database.Groups.Where(g => g.Name == ras).First();
-			return View(/*group*/);
+			int id = Convert.ToInt32(User.Claims.FirstOrDefault(q => q.Type == "UserId").Value);
+			var student = _database.Students.Where(g => g.UserId == id).First();
+			List<Student> students = _database.Students.Where(q => q.GroupId == student.GroupId).ToList();
+
+			return View(students);
+		}
+		public IActionResult DiaryPage()
+		{
+			int id = Convert.ToInt32(User.Claims.FirstOrDefault(q => q.Type == "UserId").Value);
+			var student = _database.Students.Where(g => g.UserId == id).First();
+
+			return View();
 		}
 	}
 }

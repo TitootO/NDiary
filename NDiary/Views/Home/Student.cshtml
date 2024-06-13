@@ -1,18 +1,20 @@
 ﻿@model Student
 
-<div class="conteiner">
+<a>student</a>
+@* <div class="conteiner">
 	<ul>
 		<li><a href="#">Дневник</a></li>
 		<li>
 			<a asp-controller ="StudentPages" asp-action="ProfilePage" asp-route-name="@ViewBag.name"
 							asp-route-val="@ViewBag.val">Профиль</a>
 		</li>
-		<li><a asp-controller="StudentPages" asp-action="GroupPage" asp-route-val="@ViewBag.val">Моя группа</a></li>
+		<li><a asp-controller="StudentPages" asp-action="GroupPage">Моя группа</a></li>
+		@* asp-route-val="@ViewBag.val
 		<li><a href="#">Портфолио</a></li>
 		<li><a href="#">Приказы</a></li>
 	</ul>
 </div>
-<h1>Личный кабинет</h1>
+<h1>Личный кабинет</h1> *@
 @* <p>
 	@Model.Name <br/>
 	@Model.Surname <br />
@@ -20,13 +22,10 @@
 	@Model.Email <br />
 
 </p> *@
+
 <li>
-	<ul><a asp-controller="StudentPages" asp-action="Portfolio">Дневник</a></ul>
-	<ul><a asp-controller="StudentPages" asp-action="ProfilePage" asp-route-name="@ViewBag.name"
-		   asp-route-val="@ViewBag.val">Профиль</a>
-	</ul>
-	<ul><a asp-controller="StudentPages" asp-action="GroupPage" asp-route-val="@ViewBag.val">Группа</a></ul>
-	<ul><a asp-controller="StudentPages" asp-action="Portfolio">Портфолио</a></ul>
-	<ul><a asp-controller="StudentPages" asp-action="Portfolio">Документы</a></ul>
+	<ul><a asp-controller="StudentPages" asp-action="DiaryPage">Дневник</a></ul>
+	<ul><a asp-controller="StudentPages" asp-action="ProfilePage">Профиль</a></ul>
+	<ul><a asp-controller="StudentPages" asp-action="GroupPage">Группа</a></ul>
 </li>
 

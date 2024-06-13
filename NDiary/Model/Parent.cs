@@ -11,7 +11,13 @@ namespace NDiary.Model
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public List<Student> Students { get; set; } = new List<Student>();
+        public List<Student> Students { get; set; }
+        [ForeignKey(nameof(UserId))]
         public User User { get; set; }
+        public virtual int? UserId { get; set; }
+        public Parent()
+        {
+            Students = new List<Student>();
+        }
     }
 }
